@@ -1,0 +1,34 @@
+<!-- Basic navbar example from getbootstrap.com -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="https://github.com/chrisdotgrubb">Chris</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto mb-2 mb-sm-0">
+				<li class="nav-item">
+					<a class="nav-link <%= title === 'Express' ? 'active' : '' %>" href="/">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link <%= title === 'Skills!' ? 'active' : '' %>" href="/skills">All Skills</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle <%= (title !== 'Skills!' && title !== 'Express') ? 'active' : '' %>" href="#" data-bs-toggle="dropdown">Select Skill</a>
+					<ul class="dropdown-menu">
+						<% navSkills.forEach(navSkill => { %>
+							<li><a class="dropdown-item" href="/skills/<%= navSkill.id %>"><%= navSkill.name %></a></li>
+						<% }); %>
+					</ul>
+				</li>
+				<li class="nav-item ms-auto">
+					<a class="nav-link" href="https://github.com/chrisdotgrubb/express-dev-skills">Repo</a>
+				</li>
+			</ul>
+			<form role="search">
+				<input class="form-control" type="search" placeholder="Search">
+			</form>
+		</div>
+	</div>
+</nav>
