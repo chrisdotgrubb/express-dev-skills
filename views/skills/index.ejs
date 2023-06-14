@@ -1,7 +1,29 @@
 <%- include('../partials/header') %>
+	<!-- basic list group copied from getbootstrap examples -->
+	<div class="d-flex flex-column flex-md-row p-3 py-md-5 justify-content-center">
+		
+		<div class="list-group col-md-5">
+			
+			<% skills.forEach(skill => { %>
+				
+					<a href="#" class="list-group-item list-group-item-action d-flex gap-4 py-4">
+						<img src="<%= skill.url %>" alt="<%= skill.name %>" width="60px" height="60px"
+							class="rounded-circle flex-shrink-0 m-auto">
+						<div class="d-flex gap-2 w-100 justify-content-between">
+							<div>
+								<h6 class="mb-0"><%= skill.name %></h6>
+								<p class="mb-0 opacity-75"><%= skill.description %></p>
+							</div>
+							<small class="opacity-50 text-nowrap">
+								<%= skill.isKnown ? 'known' : '' %>
+							</small>
+						</div>
+					</a>
 
-
-<h1>skills index</h1>
-
+			<% }); %>
+		
+		</div>
+	
+	</div>
 
 <%- include('../partials/footer') %>
