@@ -31,9 +31,11 @@ const skills = [
 	}
 ]
 
+
 module.exports = {
 	getAll,
-	getOne
+	getOne,
+	getName,
 }
 
 
@@ -44,4 +46,9 @@ function getAll() {
 
 function getOne(id) {
 	return skills.find(skill => skill.id === id);
+}
+
+function getName(id) {
+	const skill = skills.find(skill => skill.id === id);
+	return skill.name;
 }
