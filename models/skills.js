@@ -43,11 +43,13 @@ const skills = [
 	}
 ]
 
+let count = skills.length;
 
 module.exports = {
 	getAll,
 	getOne,
 	getName,
+	create,
 }
 
 
@@ -63,4 +65,14 @@ function getOne(id) {
 function getName(id) {
 	const skill = skills.find(skill => skill.id === id);
 	return skill.name;
+}
+
+function create(body) {
+	body.isKnown = body.isKnown === 'true' ? true : false;
+	if (body.url === '') {
+		body.url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Battleship_game_board.svg/1024px-Battleship_game_board.svg.png';
+	};
+	body.id = count;
+	skills.push(body);
+	count++;
 }

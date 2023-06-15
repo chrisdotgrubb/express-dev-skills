@@ -3,7 +3,9 @@ const Skill = require('../models/skills')
 
 module.exports = {
 	index,
-	show
+	show,
+	new: newSkill,
+	create,
 }
 
 
@@ -21,4 +23,15 @@ function show(req, res) {
 		skill: Skill.getOne(id),
 		title: Skill.getName(id),
 	});
+}
+
+function newSkill(req, res) {
+	res.render('skills/new', {
+		title: 'Add new skill',
+	});
+}
+
+function create(req, res) {
+	Skill.create(req.body);
+	res.redirect('/skills');
 }

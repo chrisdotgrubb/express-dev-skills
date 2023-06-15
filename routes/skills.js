@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var skillsController = require('../controllers/skills')
+var skillsController = require('../controllers/skills');
 
 
 //			'/skills'
 
 
-router.get('/', skillsController.index)
-router.get('/:id', skillsController.show)
+router.get('/', skillsController.index);
+router.get('/new', skillsController.new);
+router.get('/:id', skillsController.show);
 
-
-
+router.post('/', skillsController.create);
 
 module.exports = router;

@@ -15,14 +15,21 @@
 					<a class="nav-link <%= title === 'Skills!' ? 'active' : '' %>" href="/skills">All Skills</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle <%= (title !== 'Skills!' && title !== 'Express') ? 'active' : '' %>" href="#" data-bs-toggle="dropdown">Select Skill</a>
+					<a class="nav-link dropdown-toggle <%= (title !== 'Skills!' && title !== 'Express' && title !== 'Add new skill') ? 'active' : '' %>"
+						href="#" data-bs-toggle="dropdown">Select Skill</a>
 					<ul class="dropdown-menu">
-						<% navSkills.forEach(navSkill => { %>
-							<li><a class="dropdown-item" href="/skills/<%= navSkill.id %>"><%= navSkill.name %></a></li>
-						<% }); %>
+						<% navSkills.forEach(navSkill=> { %>
+							<li><a class="dropdown-item" href="/skills/<%= navSkill.id %>">
+									<%= navSkill.name %>
+								</a></li>
+							<% }); %>
 					</ul>
 				</li>
-				<li class="nav-item ms-auto">
+				<li class="nav-item">
+					<a class="nav-link <%= title === 'Add new skill' ? 'active' : '' %>" href="/skills/new">Add a new
+						skill</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="https://github.com/chrisdotgrubb/express-dev-skills">Repo</a>
 				</li>
 			</ul>
