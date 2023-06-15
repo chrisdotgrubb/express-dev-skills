@@ -51,6 +51,7 @@ module.exports = {
 	getName,
 	create,
 	deleteOne,
+	edit,
 }
 
 
@@ -83,4 +84,10 @@ function deleteOne(id) {
 	if (idx >= 0 && idx <= skills.length) {
 		skills.splice(idx, 1);
 	}
+}
+
+function edit(id, body) {
+	const skill = getOne(id);
+	body.isKnown = body.isKnown === 'true' ? true :false;
+	Object.assign(skill, body);
 }

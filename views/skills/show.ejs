@@ -3,7 +3,7 @@
 	<!-- Basic hero example from getbootstrap.com -->
 
 	<div class="px-4 py-5 my-5 text-center">
-		<img class="d-block mx-auto mb-4" src="<%= skill.url %>" alt="<% skill.name %>" width="72" height="57">
+		<img class="d-block mx-auto mb-4" src="<%= skill.url %>" alt="<% skill.name %>" width="300" height="200">
 		<h1 class="display-5 fw-bold text-body-emphasis">
 			<% skill.name %>
 		</h1>
@@ -12,7 +12,7 @@
 				<%= skill.description %>
 			</p>
 			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-				<button type="button" class="btn btn-primary btn-sm px-3">Edit</button>
+				<form action="/skills/<%= skill.id %>/edit" method="GET"><button type="submit" class="btn btn-primary btn-sm px-3">Edit</button></form>
 				<form action="/skills/<%= skill.id %>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger btn-sm px-3" >Delete</button></form>
 			</div>
 		</div>

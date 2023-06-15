@@ -15,7 +15,7 @@
 					<a class="nav-link <%= title === 'Skills!' ? 'active' : '' %>" href="/skills">All Skills</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle <%= (title !== 'Skills!' && title !== 'Express' && title !== 'Add new skill') ? 'active' : '' %>"
+					<a class="nav-link dropdown-toggle <%= (title !== 'Skills!' && title !== 'Express' && title !== 'Add new skill' && title !== 'Edit') ? 'active' : '' %>"
 						href="#" data-bs-toggle="dropdown">Select Skill</a>
 					<ul class="dropdown-menu">
 						<% navSkills.forEach(navSkill=> { %>
