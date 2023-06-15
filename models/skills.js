@@ -50,6 +50,7 @@ module.exports = {
 	getOne,
 	getName,
 	create,
+	deleteOne,
 }
 
 
@@ -75,4 +76,11 @@ function create(body) {
 	body.id = count;
 	skills.push(body);
 	count++;
+}
+
+function deleteOne(id) {
+	const idx = skills.findIndex(skill => skill.id === id);
+	if (idx >= 0 && idx <= skills.length) {
+		skills.splice(idx, 1);
+	}
 }
